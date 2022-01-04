@@ -71,23 +71,12 @@ function updateClock() {
   hourHand.groupTransform.rotate.angle = hoursToAngle(hours, mins);
   minHand.groupTransform.rotate.angle = minutesToAngle(mins);
   secHand.groupTransform.rotate.angle = secondsToAngle(secs);
+  
+  updateStats();
 }
 
 // Update the clock every tick event
 clock.addEventListener("tick", updateClock);
-
-function startSensor(stat) {
-  console.log(stat);
-}
-
-/************* STEPS/FLOOR COUNT ****************/
-
-if (appbit.permissions.granted("access_activity")) {
-  let numSteps = today.adjusted.steps;
-  let numFloors = today.adjusted.elevationGain;
-  stepCount.text = numSteps;
-  floorCount.text = numFloors;
-}
 
 /*********** HEART RATE ***********/
 
@@ -102,18 +91,29 @@ if (HeartRateSensor && appbit.permissions.granted("access_heart_rate")) {
   hrm.start();
 }
 
-/**************** BATTERY ******************/
+function updateStats() {
+  /************* STEPS/FLOOR COUNT ****************/
 
-batteryLevel.width = Math.floor(battery.chargeLevel * 26 / 100);
-batteryText.text = Math.floor(battery.chargeLevel) + '%';
+  if (appbit.permissions.granted("access_activity")) {
+    let numSteps = today.adjusted.steps;
+    let numFloors = today.adjusted.elevationGain;
+    stepCount.text = numSteps;
+    floorCount.text = numFloors;
+  }
 
-/*************** CALORIES ******************/
+  /**************** BATTERY ******************/
 
-calories.text = today.adjusted.calories;
+  batteryLevel.width = Math.floor(battery.chargeLevel * 26 / 100);
 
-/******************** AZM ***********************/
+  /*************** CALORIES ******************/
 
-azm.text = today.adjusted.activeZoneMinutes.total;
+  calories.text = today.adjusted.calories;
+
+  /******************** AZM ***********************/
+
+  azm.text = today.adjusted.activeZoneMinutes.total;
+}
+
 
 /************** SETTINGS *********************/
 
