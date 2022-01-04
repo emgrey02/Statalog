@@ -1,0 +1,26 @@
+{
+  "devDependencies": {
+    "@fitbit/sdk": "~6.0.0"
+  },
+  "fitbit": {
+    "appUUID": "58e742e9-d043-4ee1-a8be-479c1e1c6db7",
+    "appType": "clockface",
+    "appDisplayName": "Statalog",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "",
+    "requestedPermissions": [
+      "access_activity",
+      "access_heart_rate"
+    ],
+    "buildTargets": [
+      "atlas",
+      "vulcan"
+    ],
+    "i18n": {
+      "en-US": {
+        "name": "Statalog"
+      }
+    },
+    "defaultLanguage": "en-US"
+  }
+}

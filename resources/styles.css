@@ -1,0 +1,7 @@
+.background {
+  viewport-fill: black;
+}
+
+#clockface {
+  opacity: .2;
+}

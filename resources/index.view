@@ -1,0 +1,58 @@
+<svg>
+  
+<!-- date -->
+  <section id="date" x="60%-10" y="50%-25" width="60" height="50">
+    <rect x="0" y="0" width="100%" height="100%" fill="#aaaaaa" />
+    <text id="month" x="50%" y="20" font-family="System-Light" fill="black" font-size="24" text-anchor="middle" text-length="10">Jan</text>
+    <text id="day" x="50%" y="48" font-family="System-Bold" fill="black" font-size="34" text-anchor="middle" text-length="10">25</text>
+  </section>
+  
+<!-- clock ticks -->
+   <image href="clockmarks.png" />
+  
+  <!-- hands of the clock -->
+  <g id="mins" pointer-events="visible" transform="translate(50%,50%)">
+    <rect id="min-hand" x="$-4" y="-130" width="6" height="130" fill="#45bfbf" />
+  </g>
+  <g id="hours" pointer-events="visible" transform="translate(50%,50%)">
+    <rect id="hour-hand" x="$-6" y="-75" width="8" height="75" fill="pink" />
+  </g>
+  <g id="secs" pointer-events="visible" transform="translate(50%,50%)">
+    <rect id="second-hand" x="$-2" y="-120" width="3" height="150" fill="#007700" />
+  </g>
+  <circle cx="50%" cy="50%" r="15" fill="#666666" />
+  <circle cx="50%" cy="50%" r="8" fill="black" />
+
+<!--   bottom 2 stats: left, right -->
+  <section x='30' y="100%-50" width='330' height='50'>
+    <image id="st-img" href="icons/steps.png" fill="lightgreen" x="0" y="0" width="36" height="36"/>
+    <text id="step-count" x='40' y='60%' font-family="System-Light" fill="lightgreen" font-size="34" text-anchor="start" text-length="20">--</text>
+    
+    <image id="fl-img" href="icons/floors.png" fill="gold" x="235" y="0" width="36" height="36" />
+    <text id="floor-count" x="233" y="60%" font-family="System-Light" fill="gold" font-size="34" text-anchor="end" text-length="20">12</text>
+  </section>
+  
+<!-- top stats: left, right -->
+  <section x='30' y='15' width='330' height='50'>
+    <image id="hr-img" href="icons/heart_rate.png" fill="crimson" x="0" y="0" width="36" height="36" display="none"/>
+    <text id="heart-rate" x="40" y="60%" font-family="System-Light" fill="crimson" font-size="34" text-anchor="start" text-length="20">--</text>
+    
+    <image href="icons/battery.png" x="230" y="10" width="36" height="20">
+      <rect id="battery-level" x="3" y="3" height="14" fill="green" />
+    </image>
+    <text id="percentage" x="225" y="55%" font-family="System-Light" fill="white" font-size="20" text-anchor="end" text-length="20">--</text>
+  </section>
+  
+<!-- left stat -->
+  <section x="0" y="50%-32" width="100" height="100">
+    <image id="cal-img" href="icons/calories.png" fill="lightsalmon" x="0" y="0" width="36" height="36" />
+    <text id="calories" x="0" y="65" font-family="System-Light" fill="lightsalmon" font-size="34" text-anchor="start" text-length="20">456</text>
+  </section>
+
+<!-- right stat -->
+  <section x="300" y="50%-32" width="100" height="100">
+    <image id="azm-img" href="icons/azm.png" fill="cornflowerblue" x="0" y="0" width="36" height="36" />
+    <text id="azm" x="35" y="65" font-family="System-Light" fill="cornflowerblue" font-size="34" text-anchor="end" text-length="20">23</text>
+  </section>
+  
+</svg>
