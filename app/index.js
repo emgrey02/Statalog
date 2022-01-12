@@ -104,6 +104,7 @@ function updateStats() {
   /**************** BATTERY ******************/
 
   batteryLevel.width = Math.floor(battery.chargeLevel * 26 / 100);
+  batteryText.text = Math.floor(battery.chargeLevel) + '%';
 
   /*************** CALORIES ******************/
 
@@ -134,10 +135,10 @@ function settingsCallback(data) {
     secondsHand.style.fill = data.secondHand;
   }
   if (data.hideBat) {
-    batteryText.text = Math.floor(battery.chargeLevel) + '%';
+    batteryText.style.display = 'inherit';
   } 
   if (!data.hideBat) {
-    batteryText.text = "";
+    batteryText.style.display = 'none';
   }
   let statsToggle = [data.heartRate, data.calories, data.stepCount, data.floorCount, data.azm];
   let images = [heartImg, calImg, stImg, flImg, azmImg];
